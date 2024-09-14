@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* Reset some default styles */
+body, h1, h2, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Ensures items are spread out to left and right */
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    /* No need to change anything here */
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+}
+
+/* New container for the search form to align it to the right */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    /* Moved the search form inside a container */
+    margin-left: auto; /* Ensures form is aligned to the right */
+}
+
+.searchbox {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.searchbox:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+.recpi-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.recpi-container h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .searchbox {
+        width: 200px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+}
+
+/* Add to your style.css */
+
+/* Container for the cards */
+#recpi-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 cards per row */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for meal cards */
+.meal-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+    height: 500px; /* Fixed height for cards */
+    max-width: 100%; /* Ensure cards don't exceed container width */
+}
+
+.meal-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.meal-image {
+    width: 100%;
+    height: 300px; /* Fixed height for images within the card */
+    object-fit: cover;
+}
+
+.meal-content {
+    padding: 15px;
+    flex: 1; /* Ensures content area expands to fill remaining space */
+}
+
+.meal-content h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.meal-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+}
+
+.meal-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto; /* Pushes the link to the bottom */
+}
+
+.meal-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    #recpi-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets and smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    #recpi-container {
+        grid-template-columns: 1fr; /* 1 card per row for mobile screens */
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    #recpi-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets and smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    #recpi-container {
+        grid-template-columns: 1fr; /* 1 card per row for mobile screens */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .searchbox {
+        width: 150px;
+    }
+
+    nav h1 {
+        font-size: 1.5rem;
+    }
+
+    .search {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
